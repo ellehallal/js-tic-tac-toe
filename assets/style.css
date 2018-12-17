@@ -26,6 +26,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 
 #row-one, #row-two, #row-three{
@@ -46,19 +47,3 @@ h1 {
 .player-two-move {
   background-color: #FD70BC;
 }
-
-/* .button-moves:hover{
-  background-color: grey;
-}
-
-.selected-move-o{
-  background-color: #00F5E8;
-}
-
-.selected-move-x{
-  background-color: #F096C9;
-}
-
-.winner{
-  background-color: #00D7CC;
-} */
