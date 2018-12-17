@@ -5,7 +5,7 @@
 [ ] The player can start a 3x3 game in the browser
 [ ] Two human players take turns playing (X or O) until the board is full or one of them wins
 [ ] The winning player (or tie) is announced
-[ ] It looks pretty :slightly_smiling_face:
+[ ] It looks pretty 🙂
 
 ### Stretch Goals
 

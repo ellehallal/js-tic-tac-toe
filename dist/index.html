@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Starter JavaScript Project</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="../assets/style.css">
   </head>
   <body>
-    <h1>Starter JavaScript Project</h1>
+    <h1>Tic Tac Toe</h1>
 
-    <div>
-      <h2> Getting text on the page </h2>
-      <p>I can write text directly in the `dist/index.html` file!</p>
-      <span id='other-way-of-writing-text'></span>
+    <div id="player-grid">
+      <div id="row-one">
+        <div id="one" class="button-moves button-selected-move-o">1</div>
+        <div id="two" class="button-moves button-selected-move-x">2</div>
+        <div id="three" class="button-moves">3</div>
+      </div>
+      <div id="row-two">
+        <div id="four" class="button-moves">4</div>
+        <div id="five" class="button-moves">5</div>
+        <div id="six" class="button-moves">6</div>
+      </div>
+      <div id="row-three">
+        <div id="seven" class="button-moves">7</div>
+        <div id="eight" class="button-moves">8</div>
+        <div id="nine" class="button-moves">9</div>
+      </div>
+
+
     </div>
 
-    <h2> Manipulating Data </h2>
-    <form>
-      Number: <input type="number" name="number" id="number"><br>
-      <input type="button" value="Add Number" id="add-number">
-      <input type="button" value="Add One To Each Number" id="add-one-to-each-number">
-      <input type="button" value="Clear For Now" id="temporarily-clear-numbers">
-      <input type="button" value="Delete Numbers" id="clear-numbers">
-    </form>
-    <ul id='list-of-numbers'></ul>
-
-    <script src="main.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
