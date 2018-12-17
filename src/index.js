@@ -1,4 +1,4 @@
-import * as numbers from './numbers';
+// import * as numbers from './numbers';
 
 const radix = 10;
 let listOfNumbers = [];
