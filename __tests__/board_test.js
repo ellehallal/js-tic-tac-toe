@@ -1,9 +1,13 @@
 import { Board } from '../src/board';
 
-describe('newBoard', () => {
-  const newBoard = new Board;
+describe('Board', () => {
 
-  it('has the name test', () => {
-    expect(newBoard.name).toEqual("test");
+  let board;
+  beforeEach(() => {
+    board = new Board;
+  });
+
+  it('has an array with numbers 1-9 when initialized', () => {
+    expect(board.grid).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   });
 })
