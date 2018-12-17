@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500,700);
-*{
+/* *{
   border: 1px solid red;
-}
+} */
 html {
   color: #222;
   font-size: 1.5em;
@@ -39,14 +39,26 @@ h1 {
   border: 2px solid black;
 }
 
-.button-selected-move-o{
+.player-one-move {
+  background-color: #F9CF3C;
+}
+
+.player-two-move {
+  background-color: #FD70BC;
+}
+
+/* .button-moves:hover{
+  background-color: grey;
+}
+
+.selected-move-o{
   background-color: #00F5E8;
 }
 
-.button-selected-move-x{
+.selected-move-x{
   background-color: #F096C9;
 }
 
 .winner{
   background-color: #00D7CC;
-}
+} */
