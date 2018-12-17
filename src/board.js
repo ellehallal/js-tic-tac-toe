@@ -4,7 +4,11 @@ class Board {
   }
 
   putMarkOnGrid(mark, position) {
-    this.grid[position-1] = mark;
+    this.grid[position - 1] = mark;
+  }
+
+  isValidPosition(position) {
+    return typeof this.grid[position - 1] === 'number';
   }
 }
 

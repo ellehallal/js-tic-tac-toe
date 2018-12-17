@@ -15,4 +15,13 @@ describe('Board', () => {
     board.putMarkOnGrid('x',1)
     expect(board.grid[0]).toEqual('x');
   })
+
+  it('returns true if position is available', () => {
+    expect(board.isValidPosition(8)).toEqual(true);
+  })
+
+  it('returns false if position is not available', () => {
+    board.putMarkOnGrid('x',3)
+    expect(board.isValidPosition(3)).toEqual(false);
+  })
 })
