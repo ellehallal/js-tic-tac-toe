@@ -47,4 +47,13 @@ describe('Board', () => {
     board.putMarkOnGrid('x',8)
     expect(board.hasPlayerWon('x')).toEqual(true);
   });
+
+  it('can check whether player has won diagonally', () => {
+    board.putMarkOnGrid('o',1)
+    board.putMarkOnGrid('x',2)
+    board.putMarkOnGrid('o',5)
+    board.putMarkOnGrid('x',3)
+    board.putMarkOnGrid('o',9)
+    expect(board.hasPlayerWon('o')).toEqual(true);
+  });
 });
