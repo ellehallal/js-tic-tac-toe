@@ -56,4 +56,13 @@ describe('Board', () => {
     board.putMarkOnGrid('o',9)
     expect(board.hasPlayerWon('o')).toEqual(true);
   });
+
+  it('can count total moves made', () => {
+    board.putMarkOnGrid('o',1)
+    board.putMarkOnGrid('x',2)
+    board.putMarkOnGrid('o',5)
+    board.putMarkOnGrid('x',3)
+    board.putMarkOnGrid('o',9)
+    expect(board.moves).toEqual(5);
+  });
 });

@@ -1,6 +1,7 @@
 class Board {
   constructor() {
     this.grid = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    this.moves = 0
     this.winningCombos = [
       [0, 1, 2],
       [3, 4, 5],
@@ -15,6 +16,7 @@ class Board {
 
   putMarkOnGrid(mark, position) {
     this.grid[position - 1] = mark;
+    this.moves++;
   }
 
   isValidPosition(position) {
