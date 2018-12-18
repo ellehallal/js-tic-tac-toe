@@ -18,4 +18,8 @@ describe('Game', () => {
   it('creates an instance of the player 2 when initialized', () => {
     expect(game.player2).toEqual('o');
   });
+
+  it('sets the current player to player 1 when initialized', () => {
+    expect(game.currentPlayer).toEqual('x');
+  });
 })

@@ -8,7 +8,10 @@ class Game {
     this.grid = board.grid;
     this.player1 = player.player1;
     this.player2 = player.player2;
+    this.currentPlayer = this.player1;
   }
+
+
 }
 
 module.exports = { Game };
