@@ -65,4 +65,17 @@ describe('Board', () => {
     board.putMarkOnGrid('o',9)
     expect(board.moves).toEqual(5);
   });
+
+  it('can tell when the game is a tie', () => {
+    board.putMarkOnGrid('o',1)
+    board.putMarkOnGrid('x',2)
+    board.putMarkOnGrid('o',3)
+    board.putMarkOnGrid('x',5)
+    board.putMarkOnGrid('o',4)
+    board.putMarkOnGrid('x',7)
+    board.putMarkOnGrid('o',6)
+    board.putMarkOnGrid('x',9)
+    board.putMarkOnGrid('o',8)
+    expect(board.gameIsATie()).toEqual(true);
+  });
 });

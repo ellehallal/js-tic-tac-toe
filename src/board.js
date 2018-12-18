@@ -11,7 +11,8 @@ class Board {
       [2, 5, 8],
       [2, 4, 6],
       [0, 4, 8]
-    ]
+    ];
+    this.checkCombos = false;
   }
 
   putMarkOnGrid(mark, position) {
@@ -24,18 +25,21 @@ class Board {
   }
 
   hasPlayerWon(mark) {
-    let checkCombos = false;
     this.winningCombos.forEach(combo => {
       combo.forEach(() => {
         let position1 = combo[0];
         let position2 = combo[1];
         let position3 = combo[2];
         if(this.grid[position1] === mark && this.grid[position2] === mark && this.grid[position3] === mark){
-          checkCombos = true;
+          this.checkCombos = true;
         }
       })
     })
-    return checkCombos;
+    return this.checkCombos;
+  }
+
+  gameIsATie() {
+    return (this.moves === 9 && this.checkCombos === false);
   }
 }
 
