@@ -10,6 +10,12 @@ class Board {
   isValidPosition(position) {
     return typeof this.grid[position - 1] === 'number';
   }
+
+  hasPlayerWon(mark) {
+    if(this.grid[0] === mark && this.grid[1] === mark && this.grid[2] === mark){
+      return true;
+    }
+  }
 }
 
 module.exports = { Board };

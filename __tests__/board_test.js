@@ -14,14 +14,28 @@ describe('Board', () => {
   it('puts a mark on the grid', () => {
     board.putMarkOnGrid('x',1)
     expect(board.grid[0]).toEqual('x');
-  })
+  });
 
   it('returns true if position is available', () => {
     expect(board.isValidPosition(8)).toEqual(true);
-  })
+  });
 
   it('returns false if position is not available', () => {
     board.putMarkOnGrid('x',3)
     expect(board.isValidPosition(3)).toEqual(false);
-  })
-})
+  });
+
+  it('can check whether 1, 2, and 3 have the mark x', () => {
+    board.putMarkOnGrid('x',1)
+    board.putMarkOnGrid('x',2)
+    board.putMarkOnGrid('x',3)
+    expect(board.hasPlayerWon('x')).toEqual(true);
+  });
+
+  it('can check whether 1, 2, and 3 have the mark o', () => {
+    board.putMarkOnGrid('o',1)
+    board.putMarkOnGrid('o',2)
+    board.putMarkOnGrid('o',3)
+    expect(board.hasPlayerWon('o')).toEqual(true);
+  });
+});
