@@ -39,6 +39,15 @@ describe('Board', () => {
     expect(board.hasPlayerWon('o')).toEqual(true);
   });
 
+  it('can check whether player has won in a row', () => {
+    board.putMarkOnGrid('x',5)
+    board.putMarkOnGrid('o',3)
+    board.putMarkOnGrid('x',4)
+    board.putMarkOnGrid('o',1)
+    board.putMarkOnGrid('x',6)
+    expect(board.hasPlayerWon('x')).toEqual(true);
+  });
+
   it('can check whether player has won in a column', () => {
     board.putMarkOnGrid('x',5)
     board.putMarkOnGrid('o',3)
