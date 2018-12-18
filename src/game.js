@@ -11,6 +11,15 @@ class Game {
     this.currentPlayer = this.player1;
   }
 
+  switchPlayer(currentPlayer) {
+    if(currentPlayer === this.player1){
+      this.currentPlayer = this.player2;
+    } else if(currentPlayer === this.player2){
+      this.currentPlayer = this.player1;
+    };
+    return this.currentPlayer;
+  }
+
 
 }
 

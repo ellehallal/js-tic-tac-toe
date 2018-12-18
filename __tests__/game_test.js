@@ -22,4 +22,9 @@ describe('Game', () => {
   it('sets the current player to player 1 when initialized', () => {
     expect(game.currentPlayer).toEqual('x');
   });
+
+  it('switches from one player to another', () => {
+    game.switchPlayer(game.currentPlayer)
+    expect(game.currentPlayer).toEqual('o');
+  });
 })
