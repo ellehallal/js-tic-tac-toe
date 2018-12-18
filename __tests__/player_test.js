@@ -1,9 +1,14 @@
-import { Player } from "..src/player";
+import { Player } from '../src/player';
 
-describe('Player'), () => {
-  it('has two new players when initialized'), () => {
+describe('Player', () => {
 
-  };
+  let player;
+  beforeEach(() => {
+    player = new Player;
+  });
 
+    it('has a player - x - when initialized', () => {
+      expect(player.player1).toEqual('x')
+    });
 
-}
+})
