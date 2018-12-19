@@ -13,9 +13,10 @@ class Game {
 
   makeMove(currentPlayer, position) {
     if(this.board.isValidPosition(position)) {
-      this.board.putMarkOnGrid(currentPlayer, position)
+      this.board.putMarkOnGrid(currentPlayer, position);
+      return true;
     } else {
-      return 'position not available'
+      return false;
     };
   };
 
