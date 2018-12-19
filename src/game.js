@@ -3,11 +3,11 @@ import { Player } from '../src/player';
 
 class Game {
   constructor() {
-    const board = new Board();
-    const player = new Player();
-    this.grid = board.grid;
-    this.player1 = player.player1;
-    this.player2 = player.player2;
+    this.board = new Board();
+    this.player = new Player();
+    this.grid = this.board.grid;
+    this.player1 = this.player.player1;
+    this.player2 = this.player.player2;
     this.currentPlayer = this.player1;
   }
 
@@ -19,6 +19,29 @@ class Game {
     };
   }
 
+  makeMove(currentPlayer, position) {
+    if(this.board.isValidPosition(position)) {
+      this.board.putMarkOnGrid(currentPlayer, position)
+    } else {
+      return 'position not available'
+    };
+  };
+
+  canContinuePlaying(currentPlayer) {
+    if(this.board.hasPlayerWon(currentPlayer) === false && this.board.gameIsATie() === false) {
+      return true
+    } else {
+      return false
+    };
+  };
+
+  isTieOrIsWon(){
+    if(this.board.gameIsATie()) {
+      return "Tie";
+    } else if(this.board.hasPlayerWon(this.currentPlayer)){
+      return "Win";
+    }
+  }
 }
 
 module.exports = { Game };
