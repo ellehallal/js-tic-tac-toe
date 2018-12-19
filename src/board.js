@@ -15,13 +15,13 @@ class Board {
     this.checkCombos = false;
   }
 
+  isValidPosition(position) {
+    return typeof this.grid[position - 1] === 'number';
+  }
+
   putMarkOnGrid(mark, position) {
     this.grid[position - 1] = mark;
     this.moves++;
-  }
-
-  isValidPosition(position) {
-    return typeof this.grid[position - 1] === 'number';
   }
 
   hasPlayerWon(mark) {

@@ -7,7 +7,7 @@ describe('GameController', () => {
     gameController = new GameController;
   });
 
-  it('creates an instance of the Game class when intitialised'), () => {
-    expect(gameController.game).toEqual(Game.prototype)
-  }
+  it('creates an instance of the Game class when initialized', () => {
+    expect(typeof gameController.game === 'object').toEqual(true);
+  });
 })

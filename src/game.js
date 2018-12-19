@@ -11,14 +11,6 @@ class Game {
     this.currentPlayer = this.player1;
   }
 
-  switchPlayer(currentPlayer) {
-    if(currentPlayer === this.player1){
-      this.currentPlayer = this.player2;
-    } else {
-      this.currentPlayer = this.player1;
-    };
-  }
-
   makeMove(currentPlayer, position) {
     if(this.board.isValidPosition(position)) {
       this.board.putMarkOnGrid(currentPlayer, position)
@@ -34,6 +26,14 @@ class Game {
       return false
     };
   };
+
+  switchPlayer(currentPlayer) {
+    if(currentPlayer === this.player1){
+      this.currentPlayer = this.player2;
+    } else {
+      this.currentPlayer = this.player1;
+    };
+  }
 
   isTieOrIsWon(){
     if(this.board.gameIsATie()) {
