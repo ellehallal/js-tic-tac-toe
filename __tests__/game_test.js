@@ -39,7 +39,7 @@ describe('Game', () => {
     expect(game.makeMove(game.currentPlayer, 3)).toEqual('position not available');
   });
 
-  it('knows whether the game is finished or not', () => {
+  it('knows the game is finished', () => {
     game.makeMove(game.currentPlayer, 1)
     game.switchPlayer
     game.makeMove(game.currentPlayer, 2)
@@ -58,6 +58,25 @@ describe('Game', () => {
     game.switchPlayer
     game.makeMove(game.currentPlayer, 8)
     expect(game.canContinuePlaying()).toEqual(false);
+  });
+
+  it('knows the game is not finished', () => {
+    game.makeMove(game.currentPlayer, 1)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 2)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 3)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 5)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 4)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 7)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 6)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 9)
+    expect(game.canContinuePlaying()).toEqual(true);
   });
 
 })
