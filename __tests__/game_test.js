@@ -27,4 +27,10 @@ describe('Game', () => {
     game.switchPlayer(game.currentPlayer)
     expect(game.currentPlayer).toEqual('o');
   });
+
+  it('allows a player to make a move', () => {
+    game.makeMove(game.currentPlayer, 3)
+    expect(game.grid).toEqual([1, 2, 'x', 4, 5, 6, 7, 8, 9]);
+  });
+
 })
