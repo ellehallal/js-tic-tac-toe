@@ -28,12 +28,20 @@ class Game {
   };
 
   canContinuePlaying(currentPlayer) {
-    if (this.board.hasPlayerWon(currentPlayer) === false && this.board.gameIsATie() === false) {
+    if(this.board.hasPlayerWon(currentPlayer) === false && this.board.gameIsATie() === false) {
       return true
     } else {
       return false
     };
   };
+
+  isTieOrIsWon(currentPlayer){
+    if(this.board.hasPlayerWon(currentPlayer)){
+      return `${currentPlayer} has won`;
+    } else if(this.board.gameIsATie()) {
+      return "Tie";
+    }
+  }
 }
 
 module.exports = { Game };

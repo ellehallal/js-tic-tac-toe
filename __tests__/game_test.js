@@ -39,7 +39,7 @@ describe('Game', () => {
     expect(game.makeMove(game.currentPlayer, 3)).toEqual('position not available');
   });
 
-  it('knows the game is finished', () => {
+  it('knows the game has ended', () => {
     game.makeMove(game.currentPlayer, 1)
     game.switchPlayer
     game.makeMove(game.currentPlayer, 2)
@@ -60,7 +60,7 @@ describe('Game', () => {
     expect(game.canContinuePlaying()).toEqual(false);
   });
 
-  it('knows the game is not finished', () => {
+  it('knows the game can still be played', () => {
     game.makeMove(game.currentPlayer, 1)
     game.switchPlayer
     game.makeMove(game.currentPlayer, 2)
@@ -77,6 +77,27 @@ describe('Game', () => {
     game.switchPlayer
     game.makeMove(game.currentPlayer, 9)
     expect(game.canContinuePlaying()).toEqual(true);
+  });
+
+  it('knows the game has ended and is a tie', () => {
+    game.makeMove(game.currentPlayer, 1)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 2)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 3)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 5)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 4)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 7)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 6)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 9)
+    game.switchPlayer
+    game.makeMove(game.currentPlayer, 8)
+    expect(game.isTieOrIsWon()).toEqual("Tie");
   });
 
 })
