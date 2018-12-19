@@ -33,4 +33,10 @@ describe('Game', () => {
     expect(game.grid).toEqual([1, 2, 'x', 4, 5, 6, 7, 8, 9]);
   });
 
+  it('does not allow a player to make a move if the position is taken', () => {
+    game.makeMove(game.currentPlayer, 3)
+    game.switchPlayer
+    expect(game.makeMove(game.currentPlayer, 3)).toEqual('position not available');
+  });
+
 })

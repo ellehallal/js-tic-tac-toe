@@ -23,7 +23,7 @@ class Game {
     if(this.board.isValidPosition(position)) {
       this.board.putMarkOnGrid(currentPlayer, position)
     } else {
-      console.log('position not available')
+      return 'position not available'
     };
   };
 }
