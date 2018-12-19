@@ -35,69 +35,82 @@ describe('Game', () => {
 
   it('does not allow a player to make a move if the position is taken', () => {
     game.makeMove(game.currentPlayer, 3)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     expect(game.makeMove(game.currentPlayer, 3)).toEqual('position not available');
   });
 
   it('knows the game has ended', () => {
     game.makeMove(game.currentPlayer, 1)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 2)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 3)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 5)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 4)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 7)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 6)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 9)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 8)
-    expect(game.canContinuePlaying()).toEqual(false);
+    expect(game.canContinuePlaying(game.currentPlayer)).toEqual(false);
   });
 
   it('knows the game can still be played', () => {
     game.makeMove(game.currentPlayer, 1)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 2)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 3)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 5)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 4)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 7)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 6)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 9)
-    expect(game.canContinuePlaying()).toEqual(true);
+    expect(game.canContinuePlaying(game.currentPlayer)).toEqual(true);
   });
 
   it('knows the game has ended and is a tie', () => {
     game.makeMove(game.currentPlayer, 1)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 2)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 3)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 5)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 4)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 7)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 6)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 9)
-    game.switchPlayer
+    game.switchPlayer(game.currentPlayer)
     game.makeMove(game.currentPlayer, 8)
     expect(game.isTieOrIsWon()).toEqual("Tie");
+  });
+
+  it('knows the game has ended and that a player has won', () => {
+    game.makeMove(game.currentPlayer, 5)
+    game.switchPlayer(game.currentPlayer)
+    game.makeMove(game.currentPlayer, 3)
+    game.switchPlayer(game.currentPlayer)
+    game.makeMove(game.currentPlayer, 2)
+    game.switchPlayer(game.currentPlayer)
+    game.makeMove(game.currentPlayer, 4)
+    game.switchPlayer(game.currentPlayer)
+    game.makeMove(game.currentPlayer, 8)
+    expect(game.isTieOrIsWon()).toEqual("Win");
   });
 
 })

@@ -8,7 +8,7 @@ class Game {
     this.grid = this.board.grid;
     this.player1 = this.player.player1;
     this.player2 = this.player.player2;
-    this.currentPlayer = this.player.player1;
+    this.currentPlayer = this.player1;
   }
 
   switchPlayer(currentPlayer) {
@@ -35,11 +35,11 @@ class Game {
     };
   };
 
-  isTieOrIsWon(currentPlayer){
-    if(this.board.hasPlayerWon(currentPlayer)){
-      return `${currentPlayer} has won`;
-    } else if(this.board.gameIsATie()) {
+  isTieOrIsWon(){
+    if(this.board.gameIsATie()) {
       return "Tie";
+    } else if(this.board.hasPlayerWon(this.currentPlayer)){
+      return "Win";
     }
   }
 }
