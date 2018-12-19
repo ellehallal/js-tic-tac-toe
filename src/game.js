@@ -26,6 +26,14 @@ class Game {
       return 'position not available'
     };
   };
+
+  canContinuePlaying(currentPlayer) {
+    if (this.board.hasPlayerWon(currentPlayer) === false && this.board.gameIsATie() === false) {
+      return true
+    } else {
+      return false
+    };
+  };
 }
 
 module.exports = { Game };
