@@ -28,8 +28,8 @@ class Game {
     };
   };
 
-  switchPlayer(currentPlayer) {
-    if(currentPlayer === this.player1){
+  switchPlayer() {
+    if(this.currentPlayer === this.player1){
       this.currentPlayer = this.player2;
     } else {
       this.currentPlayer = this.player1;

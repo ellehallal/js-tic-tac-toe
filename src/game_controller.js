@@ -9,13 +9,13 @@ class GameController {
   }
 
   takeTurn(position) {
-    this.game.makeMove(this.currentPlayer, position);
-    return this.game.switchPlayer(this.currentPlayer);
+    this.game.makeMove(this.game.currentPlayer, position);
+    this.game.switchPlayer();
   }
 
-  togglePlayer() {
-    return this.game.switchPlayer(this.currentPlayer);
-  }
+  // togglePlayer() {
+  //   return this.game.switchPlayer(this.currentPlayer);
+  // }
 
   start() {
     while(this.gameIsActive === true) {
