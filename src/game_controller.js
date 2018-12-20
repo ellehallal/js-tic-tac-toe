@@ -20,6 +20,10 @@ class GameController {
     return this.game.isTieOrIsWon()
   }
 
+  canContinuePlaying(){
+    return this.game.canContinuePlaying(this.game.currentPlayer)
+  }
+
 // start(){
 //   while(this.game.canContinuePlaying(this.game.currentPlayer) {
 //     if(takeTurn(position)){

@@ -41,8 +41,41 @@ describe('GameController', () => {
     gameController.takeTurn(6)
     gameController.togglePlayer()
     gameController.takeTurn(9)
-    gameController.isATieOrWon()
     expect(gameController.isATieOrWon()).toEqual("Tie");
+  });
+
+  it('returns "Win" when a player has won', () => {
+    gameController.takeTurn(5)
+    gameController.togglePlayer()
+    gameController.takeTurn(4)
+    gameController.togglePlayer()
+    gameController.takeTurn(2)
+    gameController.togglePlayer()
+    gameController.takeTurn(1)
+    gameController.togglePlayer()
+    gameController.takeTurn(8)
+    expect(gameController.isATieOrWon()).toEqual("Win");
+  });
+
+  it('checks if game can continue and returns false due to a tie', () => {
+    gameController.takeTurn(3)
+    gameController.togglePlayer()
+    gameController.takeTurn(5)
+    gameController.togglePlayer()
+    gameController.takeTurn(2)
+    gameController.togglePlayer()
+    gameController.takeTurn(1)
+    gameController.togglePlayer()
+    gameController.takeTurn(8)
+    gameController.togglePlayer()
+    gameController.takeTurn(7)
+    gameController.togglePlayer()
+    gameController.takeTurn(4)
+    gameController.togglePlayer()
+    gameController.takeTurn(6)
+    gameController.togglePlayer()
+    gameController.takeTurn(9)
+    expect(gameController.canContinuePlaying()).toEqual(false);
   });
 
 })
