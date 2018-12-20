@@ -91,4 +91,17 @@ describe('GameController', () => {
     expect(gameController.canContinuePlaying()).toEqual(false);
   });
 
+  it('checks if game can continue and returns true because a player has not won, and there are less than 9 moves', () => {
+    gameController.takeTurn(5)
+    gameController.togglePlayer()
+    gameController.takeTurn(4)
+    gameController.togglePlayer()
+    gameController.takeTurn(2)
+    gameController.togglePlayer()
+    gameController.takeTurn(1)
+    gameController.togglePlayer()
+    gameController.takeTurn(9)
+    expect(gameController.canContinuePlaying()).toEqual(true);
+  });
+
 })
