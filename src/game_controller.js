@@ -3,12 +3,18 @@ import { Game } from '../src/game';
 class GameController {
   constructor() {
     this.game = new Game;
+    this.currentPlayer = this.game.currentPlayer;
     this.currentPlayerCanMakeMove = true;
     this.gameIsActive = true;
   }
 
   takeTurn(position) {
-    this.game.makeMove('x', position);
+    this.game.makeMove(this.currentPlayer, position);
+    return this.game.switchPlayer(this.currentPlayer);
+  }
+
+  togglePlayer() {
+    return this.game.switchPlayer(this.currentPlayer);
   }
 
   start() {

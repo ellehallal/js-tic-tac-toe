@@ -16,9 +16,15 @@ describe('GameController', () => {
     expect(gameController.game.grid).toEqual([1, 2, 'x', 4, 5, 6, 7, 8, 9]);
   });
 
-  // it('allows a second player to make a move', () => {
-  //   gameController.takeTurn(3)
-  //   gameController.takeTurn(5)
-  //   expect(gameController.game.grid).toEqual([1, 2, 'x', 4, 'o', 6, 7, 8, 9]);
-  // });
+  it('allows a second player to make a move', () => {
+    console.log(gameController.currentPlayer)
+    console.log(gameController.game.player1)
+    console.log(gameController.game.player2)
+    gameController.takeTurn(3)
+
+    // gameController.togglePlayer()
+    console.log(gameController.currentPlayer)
+    gameController.takeTurn(5)
+    expect(gameController.game.grid).toEqual([1, 2, 'x', 4, 'o', 6, 7, 8, 9]);
+  });
 })
