@@ -7,25 +7,29 @@ class GameController {
     this.gameIsActive = true;
   }
 
-// start() {
-  while this.gameIsActive === true do {
-    if(this.currentPlayerCanMakeMove === true) {
-      if(game.makeMove(currentPlayer, chosen_position) === true) {
-        this.currentPlayerCanMakeMove = false;
-      } else {
-        game.makeMove(currentPlayer, change_chosen_position);
-      };
-    } else if(this.currentPlayerCanMakeMove === false) {
-      if(game.canContinuePlaying()) {
-        game.switchPlayer();
-        this.currentPlayerCanMakeMove = true;
-      } else {
-        this.gameIsActive = false;
+  takeTurn(position) {
+    this.game.makeMove('x', position);
+  }
+
+  start() {
+    while(this.gameIsActive === true) {
+      if(this.currentPlayerCanMakeMove === true) {
+        if(game.makeMove(currentPlayer, chosen_position) === true) {
+          this.currentPlayerCanMakeMove = false;
+        } else {
+          game.makeMove(currentPlayer, change_chosen_position);
+        };
+      } else if(this.currentPlayerCanMakeMove === false) {
+        if(game.canContinuePlaying()) {
+          game.switchPlayer();
+          this.currentPlayerCanMakeMove = true;
+        } else {
+          this.gameIsActive = false;
+        }
       }
-    }
-  };
-  game.isTieOrIsWon();
-// }
+    };
+    game.isTieOrIsWon();
+  }
 }
 
 module.exports = { GameController };
