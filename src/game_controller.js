@@ -10,39 +10,46 @@ class GameController {
 
   takeTurn(position) {
     this.game.makeMove(this.game.currentPlayer, position);
-
   }
 
   togglePlayer() {
     this.game.switchPlayer();
   }
 
+  isATieOrWon(){
+    return this.game.isTieOrIsWon()
+  }
+
 // start(){
 //   while(this.game.canContinuePlaying(this.game.currentPlayer) {
-//     takeTurn(position)
+//     if(takeTurn(position)){
+//       this.togglePlayer()
+//     } else {
+//       this.takeTurn(position)
+//     }
 //   }
 //   this.game.isTieOrIsWon();
 // }
-
-  start() {
-    while(this.gameIsActive === true) {
-      if(this.currentPlayerCanMakeMove === true) {
-        if(game.makeMove(currentPlayer, chosen_position) === true) {
-          this.currentPlayerCanMakeMove = false;
-        } else {
-          game.makeMove(currentPlayer, change_chosen_position);
-        };
-      } else if(this.currentPlayerCanMakeMove === false) {
-        if(game.canContinuePlaying()) {
-          game.switchPlayer();
-          this.currentPlayerCanMakeMove = true;
-        } else {
-          this.gameIsActive = false;
-        }
-      }
-    };
-    game.isTieOrIsWon();
-  }
+//
+//   start() {
+//     while(this.gameIsActive === true) {
+//       if(this.currentPlayerCanMakeMove === true) {
+//         if(game.makeMove(currentPlayer, chosen_position) === true) {
+//           this.currentPlayerCanMakeMove = false;
+//         } else {
+//           game.makeMove(currentPlayer, change_chosen_position);
+//         };
+//       } else if(this.currentPlayerCanMakeMove === false) {
+//         if(game.canContinuePlaying()) {
+//           game.switchPlayer();
+//           this.currentPlayerCanMakeMove = true;
+//         } else {
+//           this.gameIsActive = false;
+//         }
+//       }
+//     };
+//     game.isTieOrIsWon();
+//   }
 }
 
 module.exports = { GameController };
