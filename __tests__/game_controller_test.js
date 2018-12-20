@@ -18,6 +18,7 @@ describe('GameController', () => {
 
   it('allows a second player to make a move', () => {
     gameController.takeTurn(3)
+    gameController.togglePlayer()
     gameController.takeTurn(5)
     expect(gameController.game.grid).toEqual([1, 2, 'x', 4, 'o', 6, 7, 8, 9]);
   });

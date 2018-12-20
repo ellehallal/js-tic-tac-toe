@@ -10,12 +10,19 @@ class GameController {
 
   takeTurn(position) {
     this.game.makeMove(this.game.currentPlayer, position);
+
+  }
+
+  togglePlayer() {
     this.game.switchPlayer();
   }
 
-  // togglePlayer() {
-  //   return this.game.switchPlayer(this.currentPlayer);
-  // }
+// start(){
+//   while(this.game.canContinuePlaying(this.game.currentPlayer) {
+//     takeTurn(position)
+//   }
+//   this.game.isTieOrIsWon();
+// }
 
   start() {
     while(this.gameIsActive === true) {
