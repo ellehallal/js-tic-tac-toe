@@ -78,4 +78,17 @@ describe('GameController', () => {
     expect(gameController.canContinuePlaying()).toEqual(false);
   });
 
+  it('checks if game can continue and returns false because player has winning combination', () => {
+    gameController.takeTurn(5)
+    gameController.togglePlayer()
+    gameController.takeTurn(4)
+    gameController.togglePlayer()
+    gameController.takeTurn(2)
+    gameController.togglePlayer()
+    gameController.takeTurn(1)
+    gameController.togglePlayer()
+    gameController.takeTurn(8)
+    expect(gameController.canContinuePlaying()).toEqual(false);
+  });
+
 })
