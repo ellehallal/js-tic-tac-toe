@@ -23,8 +23,11 @@ class GameController {
 
   start() {
     while(this.canContinuePlaying) {
-      this.takeTurn(position);
-      this.togglePlayer();
+      if(this.takeTurn(position)){
+        this.togglePlayer();
+      } else {
+        this.takeTurn(position);
+      }
     }
     return this.isTieOrIsWon();
   }
