@@ -2,8 +2,8 @@ import { Board } from '../src/board';
 import { Player } from '../src/player';
 
 class Game {
-  constructor() {
-    this.board = new Board;
+  constructor(board) {
+    this.board = board;
     this.player = new Player;
     this.grid = this.board.grid;
     this.player1 = this.player.player1;
@@ -11,19 +11,12 @@ class Game {
     this.currentPlayer = this.player1;
   }
 
-  switchPlayer(currentPlayer) {
-    if(currentPlayer === this.player1){
-      this.currentPlayer = this.player2;
-    } else {
-      this.currentPlayer = this.player1;
-    };
-  }
-
   makeMove(currentPlayer, position) {
     if(this.board.isValidPosition(position)) {
-      this.board.putMarkOnGrid(currentPlayer, position)
+      this.board.putMarkOnGrid(currentPlayer, position);
+      return true;
     } else {
-      return 'position not available'
+      return false;
     };
   };
 
@@ -34,6 +27,14 @@ class Game {
       return false
     };
   };
+
+  switchPlayer() {
+    if(this.currentPlayer === this.player1){
+      this.currentPlayer = this.player2;
+    } else {
+      this.currentPlayer = this.player1;
+    };
+  }
 
   isTieOrIsWon(){
     if(this.board.gameIsATie()) {

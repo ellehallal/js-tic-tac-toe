@@ -1,6 +1,6 @@
 class Board {
-  constructor() {
-    this.grid = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  constructor(grid) {
+    this.grid = grid;
     this.moves = 0;
     this.winningCombos = [
       [0, 1, 2],
@@ -15,13 +15,22 @@ class Board {
     this.checkCombos = false;
   }
 
-  putMarkOnGrid(mark, position) {
-    this.grid[position - 1] = mark;
-    this.moves++;
-  }
-
   isValidPosition(position) {
     return typeof this.grid[position - 1] === 'number';
+  }
+
+  putMarkOnGrid(mark, position) {
+    this.grid[position - 1] = mark;
+  }
+
+  checkNumberOfMovesOnGrid() {
+    this.moves = 0
+    this.grid.forEach( mark => {
+      if(typeof mark === 'string'){
+        this.moves++
+      }
+    })
+    return this.moves
   }
 
   hasPlayerWon(mark) {
