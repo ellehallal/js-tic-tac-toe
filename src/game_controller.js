@@ -1,6 +1,6 @@
 import { Game } from '../src/game';
 
-class GameController {
+export class GameController {
   constructor(game) {
     this.game = game;
   }
@@ -33,5 +33,3 @@ class GameController {
   }
 
 }
-
-module.exports = { GameController };
