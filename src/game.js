@@ -2,8 +2,8 @@ import { Board } from '../src/board';
 import { Player } from '../src/player';
 
 class Game {
-  constructor() {
-    this.board = new Board;
+  constructor(board) {
+    this.board = board;
     this.player = new Player;
     this.grid = this.board.grid;
     this.player1 = this.player.player1;

@@ -1,8 +1,8 @@
 import { Game } from '../src/game';
 
 class GameController {
-  constructor() {
-    this.game = new Game;
+  constructor(game) {
+    this.game = game;
   }
 
   takeTurn(position) {

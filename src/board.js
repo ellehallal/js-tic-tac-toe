@@ -2,8 +2,6 @@ class Board {
   constructor(grid) {
     this.grid = grid;
     this.moves = 0;
-
-     //instead of counting moves, counthow many items in the grid array are a number. if 0 & no player has won, then game has stopped
     this.winningCombos = [
       [0, 1, 2],
       [3, 4, 5],
@@ -23,11 +21,10 @@ class Board {
 
   putMarkOnGrid(mark, position) {
     this.grid[position - 1] = mark;
-    // this.moves++;
   }
 
   checkNumberOfMovesOnGrid() {
-
+    this.moves = 0
     this.grid.forEach( mark => {
       if(typeof mark === 'string'){
         this.moves++
