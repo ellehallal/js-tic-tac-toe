@@ -4,11 +4,6 @@ import { Game } from '../src/game';
 
 describe('GameController', () => {
 
-  // let gameController;
-  // beforeEach(() => {
-  //   gameController = new GameController;
-  // });
-
   it('creates an instance of the Game class when initialized', () => {
     const board = new Board([1,2,3])
     const game = new Game(board)
