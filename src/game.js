@@ -15,18 +15,16 @@ class Game {
     if(this.board.isValidPosition(position)) {
       this.board.putMarkOnGrid(currentPlayer, position);
       return true;
-    } else {
-      return false;
     };
+    return false;
   };
 
   canContinuePlaying(currentPlayer) {
     this.board.checkNumberOfMovesOnGrid();
     if(this.board.hasPlayerWon(currentPlayer) === false && this.board.gameIsATie() === false) {
       return true
-    } else {
-      return false
-    };
+    }
+    return false
   };
 
   switchPlayer() {
