@@ -1,4 +1,4 @@
-class Board {
+export class Board {
   constructor(grid) {
     this.grid = grid;
     this.moves = 0;
@@ -51,5 +51,3 @@ class Board {
     return (this.moves === 9 && this.checkCombos === false);
   }
 }
-
-module.exports = { Board };

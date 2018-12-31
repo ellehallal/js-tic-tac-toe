@@ -1,7 +1,7 @@
 import { Board } from '../src/board';
 import { Player } from '../src/player';
 
-class Game {
+export class Game {
   constructor(board) {
     this.board = board;
     this.player = new Player;
@@ -43,5 +43,3 @@ class Game {
     }
   }
 }
-
-module.exports = { Game };
