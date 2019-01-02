@@ -23,16 +23,6 @@ export class Board {
     this.grid[position - 1] = mark;
   }
 
-  checkNumberOfMovesOnGrid() {
-    this.moves = 0
-    this.grid.forEach( mark => {
-      if(typeof mark === 'string'){
-        this.moves++
-      }
-    })
-    return this.moves
-  }
-
   hasPlayerWon(mark) {
     this.winningCombos.forEach(combo => {
       combo.forEach(() => {
@@ -48,6 +38,12 @@ export class Board {
   }
 
   gameIsATie() {
+    this.moves = 0
+    this.grid.forEach( mark => {
+      if(typeof mark === 'string'){
+        this.moves++
+      }
+    })
     return (this.moves === 9 && this.checkCombos === false);
   }
 }

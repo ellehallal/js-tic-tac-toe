@@ -15,16 +15,15 @@ describe('Board', () => {
 
   it('counts number of marks on grid', () => {
     const board = new Board([1, 2, 3, "o", 5, 6, 7, 8, "x"]);
-    board.checkNumberOfMovesOnGrid()
+    board.gameIsATie()
     expect(board.moves).toEqual(2);
   });
 
   it('can track number of moves made on the grid', () => {
     const board = new Board([1, 2, 3, "o", 5, 6, 7, 8, "x"]);
-    board.checkNumberOfMovesOnGrid()
-    console.log(board.moves)
+    board.gameIsATie()
     board.putMarkOnGrid("x", 1)
-    board.checkNumberOfMovesOnGrid()
+    board.gameIsATie()
     expect(board.moves).toEqual(3);
   });
 
@@ -65,7 +64,6 @@ describe('Board', () => {
 
   it('can tell when the game is a tie', () => {
     const board = new Board(["x", "x", "o", "o", "x", "x", "x", "o", "o"]);
-    board.checkNumberOfMovesOnGrid()
     expect(board.gameIsATie()).toEqual(true);
   });
 });
