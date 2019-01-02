@@ -8,6 +8,7 @@ const game = new Game(board);
 const gameController = new GameController(game);
 
 const startButton = document.getElementById('start-button')
+const whosPlaying = document.getElementById('whos-playing')
 const one = document.getElementById('one');
 const two = document.getElementById('two');
 const three = document.getElementById('three');
@@ -28,6 +29,9 @@ const positionSeven = board.grid[6];
 const positionEight = board.grid[7];
 const positionNine = board.grid[8];
 
+const currentPlayer = () => {
+  whosPlaying.innerHTML = `Player ${game.currentPlayer} moves`
+}
 
 const showBoard = () => {
   one.innerHTML = positionOne;
@@ -39,7 +43,9 @@ const showBoard = () => {
   seven.innerHTML = positionSeven;
   eight.innerHTML = positionEight;
   nine.innerHTML = positionNine;
+  currentPlayer()
 }
+
 
 const startGame = () => {
   showBoard();
@@ -48,8 +54,11 @@ const startGame = () => {
 startButton.addEventListener("click", startGame)
 
 one.addEventListener("click", function(){
-  gameController.takeTurn(1)
-  one.innerHTML = board.grid[0]
+  gameController.takeTurn(1);
+  one.innerHTML = board.grid[0];
+  gameController.togglePlayer()
+  currentPlayer();
+  ;
 });
 
 two.addEventListener("click", function(){
