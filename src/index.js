@@ -43,60 +43,59 @@ const showBoard = () => {
   seven.innerHTML = positionSeven;
   eight.innerHTML = positionEight;
   nine.innerHTML = positionNine;
-  currentPlayer()
 }
 
 
 const startGame = () => {
   showBoard();
+  currentPlayer();
 }
 
 startButton.addEventListener("click", startGame)
 
-one.addEventListener("click", function(){
+one.addEventListener("click", () => {
   gameController.takeTurn(1);
   one.innerHTML = board.grid[0];
-  gameController.togglePlayer()
-  currentPlayer();
-  ;
+  // gameController.togglePlayer()
+  // currentPlayer();
 });
 
-two.addEventListener("click", function(){
+two.addEventListener("click", () => {
   gameController.takeTurn(2)
   two.innerHTML = board.grid[1]
 });
 
-three.addEventListener("click", function(){
+three.addEventListener("click", () => {
   gameController.takeTurn(3)
   three.innerHTML = board.grid[2]
 });
 
-four.addEventListener("click", function(){
+four.addEventListener("click", () => {
   gameController.takeTurn(4)
   four.innerHTML = board.grid[3]
 });
 
-five.addEventListener("click", function(){
+five.addEventListener("click", () => {
   gameController.takeTurn(5)
   five.innerHTML = board.grid[4]
 });
 
-six.addEventListener("click", function(){
+six.addEventListener("click", () => {
   gameController.takeTurn(6)
   six.innerHTML = board.grid[5]
 });
 
-seven.addEventListener("click", function(){
+seven.addEventListener("click", () => {
   gameController.takeTurn(7)
   seven.innerHTML = board.grid[6]
 });
 
-eight.addEventListener("click", function(){
+eight.addEventListener("click", () => {
   gameController.takeTurn(8)
   eight.innerHTML = board.grid[7]
 });
 
-nine.addEventListener("click", function(){
+nine.addEventListener("click", () => {
   gameController.takeTurn(9)
   nine.innerHTML = board.grid[8]
 });
