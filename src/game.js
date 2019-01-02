@@ -20,7 +20,6 @@ export class Game {
   };
 
   canContinuePlaying(currentPlayer) {
-    this.board.checkNumberOfMovesOnGrid();
     if(this.board.hasPlayerWon(currentPlayer) === false && this.board.gameIsATie() === false) {
       return true
     }
