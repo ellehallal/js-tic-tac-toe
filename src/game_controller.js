@@ -6,11 +6,10 @@ export class GameController {
   }
 
   takeTurn(position) {
-    this.game.makeMove(this.game.currentPlayer, position);
-  }
-
-  togglePlayer() {
-    this.game.switchPlayer();
+    if (this.game.board.isValidPosition(position)) {
+      this.game.makeMove(this.game.currentPlayer, position);
+      this.game.switchPlayer();
+    };
   }
 
   canContinuePlaying(){
