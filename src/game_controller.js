@@ -5,11 +5,8 @@ export class GameController {
     this.game = game;
   }
 
-  takeTurn(position) {
-    if (this.game.board.isValidPosition(position)) {
-      this.game.makeMove(this.game.currentPlayer, position);
-      this.game.switchPlayer();
-    };
+  togglePlayer(){
+    this.game.switchPlayer()
   }
 
   canContinuePlaying(){
@@ -20,15 +17,15 @@ export class GameController {
     return this.game.isTieOrIsWon();
   }
 
-  start() {
-    while(this.canContinuePlaying) {
-      if(this.takeTurn(position)){
+  takeTurn(position) {
+    if (this.game.board.isValidPosition(position) && this.canContinuePlaying()) {
+      this.game.makeMove(this.game.currentPlayer, position);
+      console.log(this.canContinuePlaying());
+
+      if (this.canContinuePlaying()) {
         this.togglePlayer();
-      } else {
-        this.takeTurn(position);
       }
     }
-    return this.isTieOrIsWon();
   }
 
 }
