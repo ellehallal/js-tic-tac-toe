@@ -30,7 +30,7 @@ const positionEight = board.grid[7];
 const positionNine = board.grid[8];
 
 const currentPlayer = () => {
-  whosPlaying.innerHTML = `Player ${game.currentPlayer} moves`
+  whosPlaying.innerHTML = `Player ${gameController.game.currentPlayer} moves`
 }
 
 const showBoard = () => {
@@ -51,51 +51,58 @@ const startGame = () => {
   currentPlayer();
 }
 
-startButton.addEventListener("click", startGame)
+startButton.addEventListener('click', startGame)
 
-one.addEventListener("click", () => {
+one.addEventListener('click', () => {
   gameController.takeTurn(1);
   one.innerHTML = board.grid[0];
-  // gameController.togglePlayer()
-  // currentPlayer();
+  currentPlayer();
 });
 
-two.addEventListener("click", () => {
-  gameController.takeTurn(2)
-  two.innerHTML = board.grid[1]
+two.addEventListener('click', () => {
+  gameController.takeTurn(2);
+  two.innerHTML = board.grid[1];
+  currentPlayer();
 });
 
-three.addEventListener("click", () => {
-  gameController.takeTurn(3)
-  three.innerHTML = board.grid[2]
+three.addEventListener('click', () => {
+  gameController.takeTurn(3);
+  three.innerHTML = board.grid[2];
+  currentPlayer();
 });
 
-four.addEventListener("click", () => {
-  gameController.takeTurn(4)
-  four.innerHTML = board.grid[3]
+four.addEventListener('click', () => {
+  gameController.takeTurn(4);
+  four.innerHTML = board.grid[3];
+  currentPlayer();
 });
 
-five.addEventListener("click", () => {
-  gameController.takeTurn(5)
-  five.innerHTML = board.grid[4]
+five.addEventListener('click', () => {
+  gameController.takeTurn(5);
+  five.innerHTML = board.grid[4];
+  currentPlayer();
 });
 
-six.addEventListener("click", () => {
-  gameController.takeTurn(6)
-  six.innerHTML = board.grid[5]
+six.addEventListener('click', () => {
+  gameController.takeTurn(6);
+  six.innerHTML = board.grid[5];
+  currentPlayer();
 });
 
-seven.addEventListener("click", () => {
-  gameController.takeTurn(7)
-  seven.innerHTML = board.grid[6]
+seven.addEventListener('click', () => {
+  gameController.takeTurn(7);
+  seven.innerHTML = board.grid[6];
+  currentPlayer();
 });
 
-eight.addEventListener("click", () => {
-  gameController.takeTurn(8)
-  eight.innerHTML = board.grid[7]
+eight.addEventListener('click', () => {
+  gameController.takeTurn(8);
+  eight.innerHTML = board.grid[7];
+  currentPlayer();
 });
 
-nine.addEventListener("click", () => {
-  gameController.takeTurn(9)
-  nine.innerHTML = board.grid[8]
+nine.addEventListener('click', () => {
+  gameController.takeTurn(9);
+  nine.innerHTML = board.grid[8];
+  currentPlayer();
 });
