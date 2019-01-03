@@ -7,9 +7,9 @@ let board = new Board([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 let game = new Game(board);
 let gameController = new GameController(game);
 
-const startButton = document.getElementById('start-button')
-const whosPlaying = document.getElementById('whos-playing')
-const isTieOrWin = document.getElementById('tie-or-win')
+const startButton = document.getElementById('start-button');
+const whosPlaying = document.getElementById('whos-playing');
+const isTieOrWin = document.getElementById('tie-or-win');
 
 const one = document.getElementById('one');
 const two = document.getElementById('two');
@@ -44,23 +44,22 @@ const showBoard = () => {
   game = new Game(board);
   gameController = new GameController(game);
 
-  one.innerHTML = positionOne;
-  two.innerHTML = positionTwo;
-  three.innerHTML = positionThree;
-  four.innerHTML = positionFour;
-  five.innerHTML = positionFive;
-  six.innerHTML = positionSix;
-  seven.innerHTML = positionSeven;
-  eight.innerHTML = positionEight;
-  nine.innerHTML = positionNine;
-}
-
+  one.innerHTML = '';
+  two.innerHTML = '';
+  three.innerHTML = '';
+  four.innerHTML = '';
+  five.innerHTML = '';
+  six.innerHTML = '';
+  seven.innerHTML = '';
+  eight.innerHTML = '';
+  nine.innerHTML = '';
+};
 
 const startGame = () => {
   showBoard();
   currentPlayer();
   tieOrWin();
-}
+};
 
 startButton.addEventListener('click', startGame)
 
