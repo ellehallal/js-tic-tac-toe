@@ -1,7 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500,700);
-/* *{
-  border: 1px solid red;
-} */
+
 html {
   color: #222;
   font-size: 1.5em;
@@ -14,12 +12,30 @@ body {
   color: #222;
   font-family: 'Roboto', sans-serif;
   height: 100%;
-
 }
 
 h1 {
   text-align: center;
   font-size: 1.5em;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#whos-playing, #tie-or-win{
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 
 #player-grid {

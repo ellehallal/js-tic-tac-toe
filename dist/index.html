@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="../assets/style.css">
-  </head>
-  <body>
-    <h1>Tic Tac Toe</h1>
-    <div>
+
+<head>
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+  <h1>Tic Tac Toe</h1>
+  <div id="container">
+    <div id="information">
       <input type="button" value="start new game" id="start-button">
       <p id="whos-playing"></p>
       <p id="tie-or-win"></p>
     </div>
-    <div id="player-grid">
 
+    <div id="player-grid">
 
       <div id="row-one">
         <div id="one" class="button-moves"></div>
         <div id="two" class="button-moves"></div>
         <div id="three" class="button-moves"></div>
       </div>
+
       <div id="row-two">
         <div id="four" class="button-moves"></div>
         <div id="five" class="button-moves"></div>
         <div id="six" class="button-moves"></div>
       </div>
+
       <div id="row-three">
         <div id="seven" class="button-moves"></div>
         <div id="eight" class="button-moves"></div>
         <div id="nine" class="button-moves"></div>
       </div>
 
-
     </div>
 
-    <script src="./main.js"></script>
-  </body>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+
 </html>
