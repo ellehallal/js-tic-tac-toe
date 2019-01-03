@@ -9,6 +9,8 @@ let gameController = new GameController(game);
 
 const startButton = document.getElementById('start-button')
 const whosPlaying = document.getElementById('whos-playing')
+const isTieOrWin = document.getElementById('tie-or-win')
+
 const one = document.getElementById('one');
 const two = document.getElementById('two');
 const three = document.getElementById('three');
@@ -30,8 +32,12 @@ const positionEight = board.grid[7];
 const positionNine = board.grid[8];
 
 const currentPlayer = () => {
-  whosPlaying.innerHTML = `Player ${gameController.game.currentPlayer} moves`
-}
+  whosPlaying.innerHTML = `Player ${gameController.game.currentPlayer} moves`;
+};
+
+const tieOrWin = () => {
+  isTieOrWin.innerHTML = gameController.isATieOrWon()
+};
 
 const showBoard = () => {
   board = new Board([1, 2, 3, 4, 5, 6, 7, 8, 9]);
@@ -53,6 +59,7 @@ const showBoard = () => {
 const startGame = () => {
   showBoard();
   currentPlayer();
+  tieOrWin();
 }
 
 startButton.addEventListener('click', startGame)
@@ -61,52 +68,61 @@ one.addEventListener('click', () => {
   gameController.takeTurn(1);
   one.innerHTML = board.grid[0];
   currentPlayer();
+  tieOrWin();
 });
 
 two.addEventListener('click', () => {
   gameController.takeTurn(2);
   two.innerHTML = board.grid[1];
   currentPlayer();
+  tieOrWin();
 });
 
 three.addEventListener('click', () => {
   gameController.takeTurn(3);
   three.innerHTML = board.grid[2];
   currentPlayer();
+  tieOrWin();
 });
 
 four.addEventListener('click', () => {
   gameController.takeTurn(4);
   four.innerHTML = board.grid[3];
   currentPlayer();
+  tieOrWin();
 });
 
 five.addEventListener('click', () => {
   gameController.takeTurn(5);
   five.innerHTML = board.grid[4];
   currentPlayer();
+  tieOrWin();
 });
 
 six.addEventListener('click', () => {
   gameController.takeTurn(6);
   six.innerHTML = board.grid[5];
   currentPlayer();
+  tieOrWin();
 });
 
 seven.addEventListener('click', () => {
   gameController.takeTurn(7);
   seven.innerHTML = board.grid[6];
   currentPlayer();
+  tieOrWin();
 });
 
 eight.addEventListener('click', () => {
   gameController.takeTurn(8);
   eight.innerHTML = board.grid[7];
   currentPlayer();
+  tieOrWin();
 });
 
 nine.addEventListener('click', () => {
   gameController.takeTurn(9);
   nine.innerHTML = board.grid[8];
   currentPlayer();
+  tieOrWin();
 });

@@ -36,9 +36,10 @@ export class Game {
 
   isTieOrIsWon(){
     if(this.board.gameIsATie()) {
-      return "Tie";
+      return "It's a tie!";
     } else if(this.board.hasPlayerWon(this.currentPlayer)){
-      return "Win";
+      return `${this.currentPlayer} wins!`;
     }
+    return ""
   }
 }
