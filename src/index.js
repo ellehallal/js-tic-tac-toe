@@ -65,13 +65,20 @@ const showBoard = () => {
   document.getElementById("9").innerHTML = '';
 };
 
+const clear = () => {
+  let divIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+  divIds.forEach(function(div) {
+  document.getElementById(div).classList.remove('player-one-move');
+  document.getElementById(div).classList.remove('player-two-move');
+  });
+}
+
 const startGame = () => {
   showBoard();
+  clear();
   currentPlayer();
   tieOrWin();
-  document.getElementById('1').classList.remove('player-one-move');
-  document.getElementById('1').classList.remove('player-two-move');
-  //array, forEach to clear cell of classes
+
 };
 
 startButton.addEventListener('click', startGame)
