@@ -5,22 +5,21 @@ export class GameController {
     this.game = game;
   }
 
-  togglePlayer(){
+  togglePlayer() {
     this.game.switchPlayer()
   }
 
-  canContinuePlaying(){
+  canContinuePlaying() {
     return this.game.canContinuePlaying(this.game.currentPlayer);
   }
 
-  isATieOrWon(){
+  isATieOrWon() {
     return this.game.isTieOrIsWon();
   }
 
   takeTurn(position) {
     if (this.game.board.isValidPosition(position) && this.canContinuePlaying()) {
       this.game.makeMove(this.game.currentPlayer, position);
-      console.log(this.canContinuePlaying());
 
       if (this.canContinuePlaying()) {
         this.togglePlayer();

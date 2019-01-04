@@ -27,17 +27,17 @@ export class Game {
   };
 
   switchPlayer() {
-    if(this.currentPlayer === this.player1){
+    if(this.currentPlayer === this.player1) {
       this.currentPlayer = this.player2;
     } else {
       this.currentPlayer = this.player1;
     };
   }
 
-  isTieOrIsWon(){
+  isTieOrIsWon() {
     if(this.board.gameIsATie()) {
       return "It's a tie!";
-    } else if(this.board.hasPlayerWon(this.currentPlayer)){
+    } else if(this.board.hasPlayerWon(this.currentPlayer)) {
       return `${this.currentPlayer} wins!`;
     }
     return ""
