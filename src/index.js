@@ -3,9 +3,9 @@ import { Player } from './player';
 import { Game } from './game';
 import { GameController } from './game_controller';
 
-let board = new Board([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-let game = new Game(board);
-let gameController = new GameController(game);
+let board;
+let game;
+let gameController;
 
 const startButton = document.getElementById('start-button');
 const whosPlaying = document.getElementById('whos-playing');
