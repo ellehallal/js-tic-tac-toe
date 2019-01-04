@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:500,700);
+@import url('https://fonts.googleapis.com/css?family=Concert+One');
 
 html {
   color: #222;
@@ -12,11 +12,13 @@ body {
   color: #222;
   font-family: 'Roboto', sans-serif;
   height: 100%;
+  font-family: 'Concert One', cursive;
 }
 
 h1 {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2.5rem;
+  margin-bottom: 3%;
 }
 
 #container {
@@ -43,6 +45,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  padding: 2%;
 }
 
 #row-one, #row-two, #row-three{
@@ -50,10 +53,36 @@ h1 {
   justify-content: center;
 }
 
+input[type=submit] {
+  margin: 0.2rem;
+  padding: 0.3rem 0.8rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-radius: 0.3rem;
+  background-color: #A9D9D1;
+  color: #000;
+}
+
+#start-button:active{
+  background-color: #41BA75;
+  color: white;
+}
+
+#tie-or-win {
+  background-color: #4DB0EA;
+  font-size: 1.5rem;
+  color: #FFF;
+}
+
 .button-moves{
   height: 10vw;
   width: 10vw;
   border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
 
 .player-one-move {

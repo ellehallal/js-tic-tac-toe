@@ -11,6 +11,14 @@ const startButton = document.getElementById('start-button');
 const whosPlaying = document.getElementById('whos-playing');
 const isTieOrWin = document.getElementById('tie-or-win');
 
+function highlight(cellId) {
+  if (gameController.game.currentPlayer === 'x') {
+    document.getElementById(cellId).classList.add('player-one-move');
+  } else if (gameController.game.currentPlayer === 'o') {
+    document.getElementById(cellId).classList.add('player-two-move');
+  }
+}
+
 function singleTurn(event) {
   const cellIdString = event.target.id;
   const cellIdNumber = parseInt(cellIdString)
@@ -18,6 +26,7 @@ function singleTurn(event) {
 
   if(parseInt(event.target.id) === cellIdNumber) {
     if(gameController.game.board.gameIsATie() === false && gameController.game.board.hasPlayerWon() === false) {
+      highlight(cellIdString);
       gameController.takeTurn(cellIdNumber);
       selectedCell.innerHTML = board.grid[cellIdNumber - 1];
     }
@@ -31,7 +40,7 @@ function singleTurn(event) {
 document.getElementById('player-grid').addEventListener('click', singleTurn)
 
 const currentPlayer = () => {
-  whosPlaying.innerHTML = `Player ${gameController.game.currentPlayer} moves`;
+  whosPlaying.innerHTML = `Make a move: ${gameController.game.currentPlayer}`;
 };
 
 const tieOrWin = () => {
@@ -53,10 +62,20 @@ const showBoard = () => {
   document.getElementById("9").innerHTML = '';
 };
 
+const clear = () => {
+  let divIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+  divIds.forEach(function(div) {
+  document.getElementById(div).classList.remove('player-one-move');
+  document.getElementById(div).classList.remove('player-two-move');
+  });
+}
+
 const startGame = () => {
   showBoard();
+  clear();
   currentPlayer();
   tieOrWin();
+
 };
 
 startButton.addEventListener('click', startGame)
