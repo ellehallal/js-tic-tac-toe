@@ -11,10 +11,7 @@ const startButton = document.getElementById('start-button');
 const whosPlaying = document.getElementById('whos-playing');
 const isTieOrWin = document.getElementById('tie-or-win');
 
-// let cellId;
-
 function highlight(cellId) {
-  // cellId = cellIdString;
   if (gameController.game.currentPlayer === 'x') {
     document.getElementById(cellId).classList.add('player-one-move');
   } else if (gameController.game.currentPlayer === 'o') {
@@ -43,7 +40,7 @@ function singleTurn(event) {
 document.getElementById('player-grid').addEventListener('click', singleTurn)
 
 const currentPlayer = () => {
-  whosPlaying.innerHTML = `Player ${gameController.game.currentPlayer} moves`;
+  whosPlaying.innerHTML = `Make a move: ${gameController.game.currentPlayer}`;
 };
 
 const tieOrWin = () => {

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:500,700);
+@import url('https://fonts.googleapis.com/css?family=Concert+One');
 
 html {
   color: #222;
@@ -12,6 +12,7 @@ body {
   color: #222;
   font-family: 'Roboto', sans-serif;
   height: 100%;
+  font-family: 'Concert One', cursive;
 }
 
 h1 {
@@ -54,6 +55,10 @@ h1 {
   height: 10vw;
   width: 10vw;
   border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
 
 .player-one-move {
