@@ -49,16 +49,6 @@ const showBoard = () => {
   board = new Board([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   game = new Game(board);
   gameController = new GameController(game);
-
-  one.innerHTML = '';
-  two.innerHTML = '';
-  three.innerHTML = '';
-  four.innerHTML = '';
-  five.innerHTML = '';
-  six.innerHTML = '';
-  seven.innerHTML = '';
-  eight.innerHTML = '';
-  nine.innerHTML = '';
 };
 
 const startGame = () => {
