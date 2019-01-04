@@ -11,17 +11,19 @@ const startButton = document.getElementById('start-button');
 const whosPlaying = document.getElementById('whos-playing');
 const isTieOrWin = document.getElementById('tie-or-win');
 
-document.getElementById('player-grid').addEventListener('click', singleTurn);
-
 function singleTurn(event) {
   const cellIdWord = event.target.id;
   let selectedCell = document.getElementById(cellIdWord);
   const cellIdNumber = numbers[cellIdWord];
-  gameController.takeTurn(cellIdNumber);
-  selectedCell.innerHTML = board.grid[cellIdNumber - 1];
+  if(gameController.game.board.gameIsATie() === false && gameController.game.board.hasPlayerWon() === false) {
+    gameController.takeTurn(cellIdNumber);
+    selectedCell.innerHTML = board.grid[cellIdNumber - 1];
+  }
   currentPlayer();
   tieOrWin();
 }
+
+document.getElementById('player-grid').addEventListener('click', singleTurn)
 
 const numbers = {
   'one': 1,
@@ -33,7 +35,7 @@ const numbers = {
   'seven': 7,
   'eight': 8,
   'nine': 9,
-}
+};
 
 const currentPlayer = () => {
   whosPlaying.innerHTML = `Player ${gameController.game.currentPlayer} moves`;
