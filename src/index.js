@@ -11,6 +11,17 @@ const startButton = document.getElementById('start-button');
 const whosPlaying = document.getElementById('whos-playing');
 const isTieOrWin = document.getElementById('tie-or-win');
 
+// let cellId;
+
+function highlight(cellId) {
+  // cellId = cellIdString;
+  if (gameController.game.currentPlayer === 'x') {
+    document.getElementById(cellId).classList.add('player-one-move');
+  } else if (gameController.game.currentPlayer === 'o') {
+    document.getElementById(cellId).classList.add('player-two-move');
+  }
+}
+
 function singleTurn(event) {
   const cellIdString = event.target.id;
   const cellIdNumber = parseInt(cellIdString)
@@ -18,6 +29,7 @@ function singleTurn(event) {
 
   if(parseInt(event.target.id) === cellIdNumber) {
     if(gameController.game.board.gameIsATie() === false && gameController.game.board.hasPlayerWon() === false) {
+      highlight(cellIdString);
       gameController.takeTurn(cellIdNumber);
       selectedCell.innerHTML = board.grid[cellIdNumber - 1];
     }
@@ -57,6 +69,9 @@ const startGame = () => {
   showBoard();
   currentPlayer();
   tieOrWin();
+  document.getElementById('1').classList.remove('player-one-move');
+  document.getElementById('1').classList.remove('player-two-move');
+  //array, forEach to clear cell of classes
 };
 
 startButton.addEventListener('click', startGame)

@@ -16,4 +16,4 @@
 
 ### SUPER stretch goal
 
-- [x] A user can choose to play against an expert computer via an API call to Dan's AWS Lambda https://github.com/pelensky/ttt_network_player
+- [ ] A user can choose to play against an expert computer via an API call to Dan's AWS Lambda https://github.com/pelensky/ttt_network_player
