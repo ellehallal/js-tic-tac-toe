@@ -15,13 +15,10 @@ document.getElementById('player-grid').addEventListener('click', singleTurn);
 
 function singleTurn(event) {
   const cellIdWord = event.target.id;
-  let test = document.getElementById(cellIdWord);
-  console.log(event.target.id)
-  console.log('++++')
+  let selectedCell = document.getElementById(cellIdWord);
   const cellIdNumber = numbers[cellIdWord];
-  console.log(cellIdNumber)
   gameController.takeTurn(cellIdNumber);
-  test.innerHTML = board.grid[cellIdNumber - 1];
+  selectedCell.innerHTML = board.grid[cellIdNumber - 1];
   currentPlayer();
   tieOrWin();
 }
