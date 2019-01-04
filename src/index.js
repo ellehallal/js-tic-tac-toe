@@ -12,7 +12,6 @@ const whosPlaying = document.getElementById('whos-playing');
 const isTieOrWin = document.getElementById('tie-or-win');
 
 function singleTurn(event) {
-
   const cellIdString = event.target.id;
   const cellIdNumber = parseInt(cellIdString)
   let selectedCell = document.getElementById(cellIdString);
