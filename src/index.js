@@ -10,6 +10,9 @@ let gameController;
 const startButton = document.getElementById('start-button');
 const whosPlaying = document.getElementById('whos-playing');
 const isTieOrWin = document.getElementById('tie-or-win');
+const playerGrid = document.getElementById('player-grid');
+const divIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
 
 function highlight(cellId) {
   if (gameController.game.currentPlayer === 'x') {
@@ -37,7 +40,7 @@ function singleTurn(event) {
   }
 }
 
-document.getElementById('player-grid').addEventListener('click', singleTurn)
+
 
 const currentPlayer = () => {
   whosPlaying.innerHTML = `Make a move: ${gameController.game.currentPlayer}`;
@@ -51,22 +54,15 @@ const showBoard = () => {
   board = new Board([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   game = new Game(board);
   gameController = new GameController(game);
-  document.getElementById("1").innerHTML = '';
-  document.getElementById("2").innerHTML = '';
-  document.getElementById("3").innerHTML = '';
-  document.getElementById("4").innerHTML = '';
-  document.getElementById("5").innerHTML = '';
-  document.getElementById("6").innerHTML = '';
-  document.getElementById("7").innerHTML = '';
-  document.getElementById("8").innerHTML = '';
-  document.getElementById("9").innerHTML = '';
+  divIds.forEach(function(div) {
+    document.getElementById(div).innerHTML = '';
+  });
 };
 
 const clear = () => {
-  let divIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
   divIds.forEach(function(div) {
-  document.getElementById(div).classList.remove('player-one-move');
-  document.getElementById(div).classList.remove('player-two-move');
+    document.getElementById(div).classList.remove('player-one-move');
+    document.getElementById(div).classList.remove('player-two-move');
   });
 }
 
@@ -78,4 +74,5 @@ const startGame = () => {
 
 };
 
+playerGrid.addEventListener('click', singleTurn)
 startButton.addEventListener('click', startGame)
