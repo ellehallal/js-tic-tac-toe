@@ -6,7 +6,10 @@
   "scripts": {
     "lint": "eslint src/*.js",
     "test": "jest",
-    "watch": "node_modules/.bin/webpack --watch"
+    "watch": "node_modules/.bin/webpack --watch",
+    "build": "webpack --config webpack.config.js",
+    "start": "node server.js",
+    "heroku-postbuild": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -14,9 +17,7 @@
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
+  "bugs": {},
   "homepage": "",
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -32,6 +33,11 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
+    "express": "^4.16.4",
     "lodash": "^4.17.11"
-  }
+  },
+  "engines": {
+    "node": "11.6.0",
+    "npm": "6.5.0"
+   }
 }
