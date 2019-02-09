@@ -10,7 +10,7 @@ export class Board {
       [1, 4, 7],
       [2, 5, 8],
       [2, 4, 6],
-      [0, 4, 8]
+      [0, 4, 8],
     ];
     this.checkCombos = false;
   }
@@ -24,26 +24,26 @@ export class Board {
   }
 
   hasPlayerWon(mark) {
-    this.winningCombos.forEach(combo => {
+    this.winningCombos.forEach((combo) => {
       combo.forEach(() => {
-        let position1 = combo[0];
-        let position2 = combo[1];
-        let position3 = combo[2];
-        if(this.grid[position1] === mark && this.grid[position2] === mark && this.grid[position3] === mark){
+        const position1 = combo[0];
+        const position2 = combo[1];
+        const position3 = combo[2];
+        if (this.grid[position1] === mark && this.grid[position2] === mark && this.grid[position3] === mark) {
           this.checkCombos = true;
         }
-      })
-    })
+      });
+    });
     return this.checkCombos;
   }
 
   gameIsATie() {
-    this.moves = 0
-    this.grid.forEach( mark => {
-      if(typeof mark === 'string'){
-        this.moves++
+    this.moves = 0;
+    this.grid.forEach((mark) => {
+      if (typeof mark === 'string') {
+        this.moves += 1;
       }
-    })
+    });
     return (this.moves === 9 && this.checkCombos === false);
   }
 }
